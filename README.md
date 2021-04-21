@@ -1,4 +1,6 @@
 # QwQ2
-Fxxk BaiduPan and Tencent Weiyun who banned my file.
+可用于百度云等国产网盘资源保护,防止封禁.
 
-编译后可作为命令行工具
+编译后可作为命令行工具.
+
+
