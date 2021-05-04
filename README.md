@@ -69,6 +69,9 @@ Or you can use `qwq2 -h` to get help.
 Compile
 ---
 Windows 10:
+
 `clang 'qwq2.c' -o 'qwq2.exe' -Wall -g -O2 -static-libgcc --target=x86_64-w64-mingw -std=c11`
+
 WSL2:
+
 `gcc qwq2.c -o qwq2`
