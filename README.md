@@ -43,7 +43,7 @@ Linux用户请自行到releases下载.
 ![image](https://user-images.githubusercontent.com/80948381/116978771-beebf880-acf6-11eb-9894-f5f7a1a280f9.png)
 
 ---
-命令行工具
+Command Line Tools
 ---
 ```
 parameters:
