@@ -1,11 +1,11 @@
-// code by 1677
+// Code by userElaina
 #include<stdio.h>
-#include<math.h>
-#include<stdlib.h>
-#include<string.h>
-#include<time.h>
-#include<setjmp.h>
-#include<stdint.h>
+// #include<math.h>
+// #include<stdlib.h>
+// #include<string.h>
+// #include<time.h>
+// #include<setjmp.h>
+// #include<stdint.h>
 #include<stdbool.h>
 
 #define UC unsigned char
@@ -41,18 +41,20 @@ inline void _fre(){
 
 inline void _help(){
 	printf(
-		"\nqwq2 xor encoder helper\n\n"
-    	"[INPUT_FILE_ADDRESS]\n    INPUT_FILE_ADDRESS will be encoded (or decode).\n"
+		"\nqwq2 xor encoder (decoder) helper\n\n"
+		"parameters:\n"
+    	"[INPUT_FILE_ADDRESS]\n    INPUT_FILE_ADDRESS will be encoded (decode).\n"
     	"This parameter is necessary. It should be given first.\n\n"
 		"-o [OUTPUT_FILE_ADDRESS]\n    OUTPUT_FILE_ADDRESS will be *.qwq by default where * is INPUT_FILE_ADDRESS.\n"
     	"This parameter is not necessary.\n\n"
 		"-p [PASSWORD]\n    Encode with PASSWORD.\n"
-		"-f [PASSWORD_FILE_ADDRESS]\n    Code with the file PASSWORD_FILE_ADDRESS.\n"
-    	"There should be only one of these two parameters. They are not necessary and should be given last.\n\n"
+		// "-f [PASSWORD_FILE_ADDRESS]\n    Code with the file PASSWORD_FILE_ADDRESS.\n"
+    	// "There should be only one of these two parameters. They are not necessary and should be given last.\n\n"
+    	"This parameter is not necessary and should be given last.\n\n"
     	"You can use it like this:\n"
-    	"    qwq2 /root/c/1.txt -o /root/c/1.out -p 123456\n\n"
-    	"Warning:\n"
-    	"If the output address exists in a file, it will disappear forever.\n\n"
+    	"    qwq2 /root/c/qwq/2/tf/1.zip -o /root/c/qwq/2/tf/mima123456.qwq2 -p 123456\n\n"
+    	"warning:\n"
+    	"    If the output address exists in a file, it will disappear forever.\n\n"
     	"Or you can read README.md to get help.\n\n"
 	);
 	_fre();
@@ -84,14 +86,14 @@ inline void geto(){
 		if(o!=NULL){
 			printf(
 				"Warning: [%s]\n"
-				"The output address exists in a file. \n"
-				"And it will disappear forever after encoding. \n"
+				"The output address exists in a file.\n"
+				"And it will disappear forever after encoding (decoding).\n"
 				"Are you sure (y/n)? ",
 				fo
 			);
 			if(getchar()!='y'){
 				printf(
-					"You exit, and the file had not encoded.\n"
+					"You exit, and the file has not been encoded (decoded).\n"
 				);
 				_fre();
 			}
@@ -106,7 +108,7 @@ inline void geto(){
 inline void encode(int ads){
 	geti();
 	geto();
-	printf("Decoding '%s' to '%s' ...\n",fi,fo);
+	printf("Encoding (decoding) '%s' to '%s' ...\n",fi,fo);
 	const int pl=strlen(psw);
 	const int sz=sizeof(UC);
 	if(ads){
@@ -124,7 +126,7 @@ inline void encode(int ads){
 		!(p1==p2&&((fwrite(buf,sz,p2-buf,o),p2=(p1=buf)+fread(buf,sz,MXL,i)),p1==p2));
 		*p1++^=psw[j=(j+1)^pl?j+1:0]
 	);
-	printf("Successfully decoded '%s' to '%s' !\n",fi,fo);
+	printf("Successfully encoded (decoded) '%s' to '%s' !\n",fi,fo);
 	_fre();
 }
 
