@@ -1,11 +1,5 @@
 // Code by userElaina
 #include<stdio.h>
-// #include<math.h>
-// #include<stdlib.h>
-// #include<string.h>
-// #include<time.h>
-// #include<setjmp.h>
-// #include<stdint.h>
 #include<stdbool.h>
 
 #define UC unsigned char
@@ -48,8 +42,6 @@ inline void _help(){
 		"-o [OUTPUT_FILE_ADDRESS]\n    OUTPUT_FILE_ADDRESS will be *.qwq by default where * is INPUT_FILE_ADDRESS.\n"
     	"This parameter is not necessary.\n\n"
 		"-p [PASSWORD]\n    Encode with PASSWORD.\n"
-		// "-f [PASSWORD_FILE_ADDRESS]\n    Code with the file PASSWORD_FILE_ADDRESS.\n"
-    	// "There should be only one of these two parameters. They are not necessary and should be given last.\n\n"
     	"This parameter is not necessary and should be given last.\n\n"
     	"You can use it like this:\n"
     	"    qwq2 /root/c/qwq/2/tf/1.zip -o /root/c/qwq/2/tf/mima123456.qwq2 -p 123456\n\n"
