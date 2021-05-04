@@ -34,18 +34,20 @@ Because of the symmetry of the algorithm, there is a BUG that I don't want to fi
 命令行工具
 ---
 ```cpp
-		"\nqwq2 xor encoder helper\n\n"
-    	"[INPUT_FILE_ADDRESS]\n    INPUT_FILE_ADDRESS will be encoded (or decode).\n"
-    	"This parameter is necessary. It should be given first.\n\n"
-		"-o [OUTPUT_FILE_ADDRESS]\n    OUTPUT_FILE_ADDRESS will be *.qwq by default where * is INPUT_FILE_ADDRESS.\n"
-    	"This parameter is not necessary.\n\n"
-		"-p [PASSWORD]\n    Encode with PASSWORD.\n"
-		"-f [PASSWORD_FILE_ADDRESS]\n    Code with the file PASSWORD_FILE_ADDRESS.\n"
-    	"There should be only one of these two parameters. They are not necessary and should be given last.\n\n"
-    	"You can use it like this:\n"
-    	"    qwq2 /root/c/1.txt -o /root/c/1.out -p 123456\n\n"
-    	"Warning:\n"
-    	"If the output address exists in a file, it will disappear forever.\n\n"
-    	"Or you can read README.md to get help.\n\n"
+    	[INPUT_FILE_ADDRESS]
+		INPUT_FILE_ADDRESS will be encoded (or decode).
+    		This parameter is necessary. It should be given first.
+	
+	-o [OUTPUT_FILE_ADDRESS]
+		OUTPUT_FILE_ADDRESS will be *.qwq by default where * is INPUT_FILE_ADDRESS.
+		This parameter is not necessary.
+	
+	-p [PASSWORD]
+		Encode with PASSWORD
+    		It it not necessary and should be given last.
+	
+    	You can use it like this:
+    		qwq2 /root/c/1.txt -o /root/c/1.out -p 123456
 ```
+Or you can use `qwq2 -h` to get help.
       
