@@ -14,9 +14,9 @@ Encode: Drag and drop the file you want to decode onto my program `qwq2.exe`, an
 
 关于啥是拖放(够详细了吧):
 
-![image](https://user-images.githubusercontent.com/80948381/116979736-f27b5280-acf7-11eb-9e5e-0d7970f912ee.png)
+![image](https://user-images.githubusercontent.com/80948381/116979948-379f8480-acf8-11eb-834f-99e05fc11c30.png)
 
-鼠标移动到红点的位置,右键未松开.通常会有 `用qwq2.exe打开` 的提示.
+鼠标移动到红点的位置,左键未松开.通常会有 `用qwq2.exe打开` 的提示.
 
 ---
 使用范围
