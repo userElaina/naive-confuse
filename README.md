@@ -13,6 +13,7 @@ Encode: Drag and drop the file you want to decode onto my program `qwq2.exe`, an
 [Download (Windows)](https://github.com/userElaina/naive-confuse/releases/download/0.0.3/qwq2.exe)
 
 关于啥是拖放(够详细了吧):
+
 ![image](https://user-images.githubusercontent.com/80948381/116979389-86005380-acf7-11eb-966e-f1611b1a8823.png)
 
 鼠标移动到红点的位置,右键未松开.通常会有 `用qwq2.exe打开` 的提示.
@@ -38,6 +39,7 @@ Linux用户请自行到releases下载.
 未充分测试,跑不起来请自行编译.
 
 关于"Windows是什么","我是什么系统","啥是C语言","怎么编译":
+
 ![image](https://user-images.githubusercontent.com/80948381/116978771-beebf880-acf6-11eb-9894-f5f7a1a280f9.png)
 
 ---
