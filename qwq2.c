@@ -21,14 +21,19 @@ char fi[MXN]="_._",fo[MXN]="_._.qwq2";
 UC buf[MXL];
 bool two_gt=false;
 
-FILE *i,*o;
+FILE *i=NULL,*o=NULL;
 
 inline void _fre(){
     memset(psw,0,sizeof(psw));
     memset(fi,0,sizeof(psw));
     memset(fo,0,sizeof(psw));
+    memset(reg,0,sizeof(psw));
+    memset(ext,0,sizeof(psw));
+    memset(ad,0,sizeof(psw));
+
 	fclose(i);
 	fclose(o);
+	
     getchar();
 	if(two_gt)getchar();
     exit(0);
@@ -63,24 +68,37 @@ inline void geti(){
 }
 
 inline void geto(){
-	o=fopen(fo,"rb");
-	if(o!=NULL){
-		printf(
-			"Warning: [%s]\n"
-			"The output address exists in a file. \n"
-			"And it will disappear forever after encoding. \n"
-			"Are you sure (y/n)? ",
-			fo
-		);
-		if(getchar()!='y'){
+	bool flg=false;
+	#ifdef __WINDOWS_
+		flg=true;
+	#endif
+	#ifdef _WIN32
+		flg=true;
+	#endif
+	#ifdef _WIN64
+		flg=true;
+	#endif
+
+	if(flg){
+		o=fopen(fo,"rb");
+		if(o!=NULL){
 			printf(
-				"You exit, and the file had not encoded.\n"
+				"Warning: [%s]\n"
+				"The output address exists in a file. \n"
+				"And it will disappear forever after encoding. \n"
+				"Are you sure (y/n)? ",
+				fo
 			);
-			_fre();
+			if(getchar()!='y'){
+				printf(
+					"You exit, and the file had not encoded.\n"
+				);
+				_fre();
+			}
+			two_gt=true;
 		}
-		two_gt=true;
+		fclose(o);
 	}
-	fclose(o);
 	o=fopen(fo,"wb");
 	return;
 }
@@ -88,6 +106,7 @@ inline void geto(){
 inline void encode(int ads){
 	geti();
 	geto();
+	printf("Decoding '%s' to '%s' ...\n",fi,fo);
 	const int pl=strlen(psw);
 	const int sz=sizeof(UC);
 	if(ads){
@@ -105,7 +124,7 @@ inline void encode(int ads){
 		!(p1==p2&&((fwrite(buf,sz,p2-buf,o),p2=(p1=buf)+fread(buf,sz,MXL,i)),p1==p2));
 		*p1++^=psw[j=(j+1)^pl?j+1:0]
 	);
-	printf("Successfully encode '%s' to '%s'!\n",fi,fo);
+	printf("Successfully decoded '%s' to '%s' !\n",fi,fo);
 	_fre();
 }
 
