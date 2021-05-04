@@ -1,23 +1,14 @@
 # QwQ2
 ---
-快速入门
+快速入门(Quick Start)
 ---
 加密:将想要加密的文件拖放到 `qwq2.exe` 上,生成一个加密好的后缀为 `.qwq2` 的文件.
 
 解密:将想要解密的文件拖放到 `qwq2.exe` 上,生成一个解密好的后缀去掉了 `.qwq2` 的文件.
 
-由于算法的对称性,有一个我懒得修复的 `BUG`: 无论是加密还是解密,程序中输出的动词都是 `decode`. 这不影响正常使用.
-
-[下载地址](https://github.com/userElaina/naive-confuse/releases/download/0.0.3/qwq2.exe)
-
----
-Quick Start
----
 Encode: Drag and drop the file you want to encode onto my program `qwq2.exe`, and then an encoded file will be created with `.qwq2` extension.
 
 Encode: Drag and drop the file you want to decode onto my program `qwq2.exe`, and then an decoded file will be created without `.qwq2` extension.
-
-Because of the symmetry of the algorithm, there is a BUG that I don't want to fix. The verb output in the program is `decode`, both for encoding and decoding. This does not affect normal usage.
 
 [Download](https://github.com/userElaina/naive-confuse/releases/download/0.0.3/qwq2.exe)
 
@@ -34,7 +25,8 @@ Because of the symmetry of the algorithm, there is a BUG that I don't want to fi
 命令行工具
 ---
 ```
-qwq2
+parameters:
+
     	[INPUT_FILE_ADDRESS]
 		INPUT_FILE_ADDRESS will be encoded (or decode).
     		This parameter is necessary. It should be given first.
