@@ -2,9 +2,9 @@
 ---
 快速入门(Quick Start)
 ---
-加密:将想要加密的文件用鼠标按着拖放到 `qwq2.exe` 上,生成一个加密好的后缀为 `.qwq2` 的文件.
+加密:将想要加密的文件用鼠标左键按着拖放到 `qwq2.exe` 上,生成一个加密好的后缀为 `.qwq2` 的文件.
 
-解密:将想要解密的文件用鼠标按着拖放到 `qwq2.exe` 上,生成一个解密好的后缀去掉了 `.qwq2` 的文件.
+解密:将想要解密的文件用鼠标左键按着拖放到 `qwq2.exe` 上,生成一个解密好的后缀去掉了 `.qwq2` 的文件.
 
 Encode: Drag and drop the file you want to encode onto my program `qwq2.exe`, and then an encoded file will be created with `.qwq2` extension.
 
