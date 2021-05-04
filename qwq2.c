@@ -10,9 +10,17 @@
 
 #define UC unsigned char
 #define inline 
+#define MXN 1024
+#define MXL 1<<24
 
-UC psw[1000]="qwq";
-char fi[1000]="1.in",fo[1000]="1.in.qwq";
+UC psw[MXN]="qwq";
+char ext[MXN]=".qwq2",reg[MXN];
+UC ad[MXN]="https://github.com/userElaina/naive-confuse to find how to decode. ";
+char fi[MXN]="_._",fo[MXN]="_._.qwq2";
+
+UC buf[MXL];
+bool two_gt=false;
+
 FILE *i,*o;
 
 inline void _fre(){
@@ -21,9 +29,8 @@ inline void _fre(){
     memset(fo,0,sizeof(psw));
 	fclose(i);
 	fclose(o);
-	free(i);
-	free(o);
     getchar();
+	if(two_gt)getchar();
     exit(0);
 }
 
@@ -71,49 +78,75 @@ inline void geto(){
 			);
 			_fre();
 		}
+		two_gt=true;
 	}
 	fclose(o);
 	o=fopen(fo,"wb");
 	return;
 }
 
-inline void encode(){
+inline void encode(int ads){
 	geti();
 	geto();
-	int pl=strlen(psw);
-	fseek(i,0,SEEK_END);       
-	int l=ftell(i);  
-	rewind(i);
-	UC c;
-	for(int j=0;j<l;j++) {
-		fread(&c,sizeof(UC),1,i);
-		c^=psw[j%pl];
-		fwrite(&c,sizeof(UC),1,o);
+	const int pl=strlen(psw);
+	const int sz=sizeof(UC);
+	if(ads){
+		const int len_ad=strlen(ad);
+		if(ads>0){
+			fread(buf,sz,len_ad,i);
+		}else{
+			fwrite(ad,sz,len_ad,o);
+		}
 	}
-	printf("%s 2 %s SUCC!\n",fi,fo);
+	UC *p1=buf;
+	UC *p2=buf+fread(buf,sizeof(UC),MXL,i);
+	for(
+		int j=pl-1;
+		!(p1==p2&&((fwrite(buf,sz,p2-buf,o),p2=(p1=buf)+fread(buf,sz,MXL,i)),p1==p2));
+		*p1++^=psw[j=(j+1)^pl?j+1:0]
+	);
+	printf("Successfully encode '%s' to '%s'!\n",fi,fo);
 	_fre();
 }
 
 int main(int argc,char**argv){
-    if(argc<2)_help();
-    if(!strcmp("-h",argv[1]))_help();
-	strcpy(fi,argv[1]);
-	strcpy(fo,argv[1]);
-	strcat(fo,".qwq");
-	if(argc==2)encode();
-	if(argc==4){
-		if(!strcmp("-o",argv[2])){
+    if(argc<2)fgets(reg,MXN,stdin),argc=2;
+	else strcpy(reg,argv[1]);
+
+	int len_reg=strlen(reg);
+	if(!(reg[len_reg-1]^'\n'))
+		reg[--len_reg]=0;
+    if(!strcmp("-h",reg))_help();
+    if(!strcmp("--help",reg))_help();
+    if(!strcmp("help",reg))_help();
+
+	strcpy(fi,reg);
+	strcpy(fo,reg);
+	strcat(fo,ext);
+	// if(argc==2)encode(0);
+	if(argc==2){
+		bool flg=false;
+		const int len_ext=strlen(ext);
+		if(len_reg<=len_ext)flg=true;
+		else for(int j=1;j<=len_ext;j++)
+			if(reg[len_reg-j]^ext[len_ext-j]){
+				flg=true;
+				break;
+			}
+		encode(flg?-1:(fo[len_reg-len_ext]=0,1));
+	}else if(argc==4){
+		if(!strcmp("-o",argv[2]))
            strcpy(fo,argv[3]);
-        }else if(!strcmp("-p",argv[2])){
+        else if(!strcmp("-p",argv[2]))
            strcpy(psw,argv[3]);
-        }else _help();
+        else _help();
 	}else if(argc==6){
-		if(!strcmp("-o",argv[2])){
+		if(!strcmp("-o",argv[2]))
            strcpy(fo,argv[3]);
-        }else _help();
-		if(!strcmp("-p",argv[4])){
+        else _help();
+		if(!strcmp("-p",argv[4]))
            strcpy(psw,argv[3]);
-        }else _help();
+        else _help();
 	}else _help();
-	encode();
+	encode(0);
 }
