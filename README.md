@@ -2,9 +2,9 @@
 ---
 快速入门(Quick Start)
 ---
-加密:将想要加密的文件拖放到 `qwq2.exe` 上,生成一个加密好的后缀为 `.qwq2` 的文件.
+加密:将想要加密的文件用鼠标按着拖放到 `qwq2.exe` 上,生成一个加密好的后缀为 `.qwq2` 的文件.
 
-解密:将想要解密的文件拖放到 `qwq2.exe` 上,生成一个解密好的后缀去掉了 `.qwq2` 的文件.
+解密:将想要解密的文件用鼠标按着拖放到 `qwq2.exe` 上,生成一个解密好的后缀去掉了 `.qwq2` 的文件.
 
 Encode: Drag and drop the file you want to encode onto my program `qwq2.exe`, and then an encoded file will be created with `.qwq2` extension.
 
@@ -19,7 +19,7 @@ Encode: Drag and drop the file you want to decode onto my program `qwq2.exe`, an
 
 不建议应用于真正需要加密的场景,略有密码学常识的人看了标题就知道怎么解密了(其实只能算是解码).
 
-对于那种使用百度网盘在线解(封)压(禁)功能的人来说,这个程序的加密程度跟国密系列差不多.
+对于那种使用百度网盘在线解(封)压(禁)功能的人来说,这个程序的算法跟国密系列差不了多少(所以别™在线解压).
 
 ---
 命令行工具
