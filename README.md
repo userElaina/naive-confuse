@@ -33,7 +33,8 @@ Because of the symmetry of the algorithm, there is a BUG that I don't want to fi
 ---
 命令行工具
 ---
-```cpp
+```
+qwq2
     	[INPUT_FILE_ADDRESS]
 		INPUT_FILE_ADDRESS will be encoded (or decode).
     		This parameter is necessary. It should be given first.
@@ -44,10 +45,10 @@ Because of the symmetry of the algorithm, there is a BUG that I don't want to fi
 	
 	-p [PASSWORD]
 		Encode with PASSWORD
-    		It it not necessary and should be given last.
+    		This parameter is not necessary and should be given last.
 	
     	You can use it like this:
-    		qwq2 /root/c/1.txt -o /root/c/1.out -p 123456
+    		qwq2 /root/c/qwq/2/tf/1.zip -o /root/c/qwq/2/tf/mima123456.qwq2 -p 123456
 ```
 Or you can use `qwq2 -h` to get help.
       
