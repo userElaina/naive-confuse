@@ -1,0 +1,13 @@
+.vscode
+
+# executable
+*.exe
+*.out
+
+.qwq
+.qwq2
+
+archive
+tmp
+temp
+tempCodeRunnerFile.cpp
